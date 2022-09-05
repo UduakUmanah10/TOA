@@ -4,12 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      -uses: actions/checkout@v1
+     -name: Checkout
+       uses: actions/checkout@v1
 
       -name: Set Up JDK
        uses: actions/setup-java@v1
        with:
          java-version: 1.11
+
 
        -name: Build Project
         run: ./gridlew assemble
