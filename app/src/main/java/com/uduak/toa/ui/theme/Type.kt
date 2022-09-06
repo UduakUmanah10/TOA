@@ -41,6 +41,11 @@ val typography =Typography(
     button = TextStyle(
         fontFamily= Urbanistbold,
         fontSize= 13.sp,
+    ),
+    caption = TextStyle(
+        fontFamily= UrbanistLight,
+        fontSize=12.sp
+
     )
 
 )

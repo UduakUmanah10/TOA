@@ -1,13 +1,13 @@
 package com.uduak.toa.ui.components
 
+
+
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
+import androidx.compose.material.*
 import androidx.compose.material.ButtonDefaults.buttonColors
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -21,34 +21,20 @@ import com.uduak.toa.R
 import com.uduak.toa.ui.theme.ButtonShape
 import com.uduak.toa.ui.theme.TOATheme
 
-/*
-* this is a custom [Button] tha provides the shape and styling expected
-* in the TOA application
-* @param [text] the text inside the button
-* @param [onClick] A callBack invoked when the user clicks the button
-* @param[modifier]  an optional [Modifier] to configure this component
-* @param [backgroundColor] the color of the button in enabled state
-* */
+
 
 @Composable
-fun PrimaryButton(
+fun SecondaryButton(
     modifier: Modifier = Modifier,
     text:String,
     onClick:()->Unit,
-    BackgroundColor: Color = MaterialTheme.colors.primary,
 ){
-    val buttonColors= buttonColors(
-        backgroundColor = BackgroundColor,
-        )
-
-    Button(
+    TextButton(
         onClick = onClick,
         shape = ButtonShape,
         modifier = modifier
             .height(dimensionResource(id = R.dimen.button_height))
             .fillMaxWidth(),
-        colors = buttonColors
-
     ) {
         Text(text= text.toUpperCase(Locale.current),
 
@@ -73,10 +59,13 @@ fun PrimaryButton(
 @Composable
 private  fun PrimaryButtonPreview(){
     TOATheme{
-        PrimaryButton(
-            text = "primary Button",
-            onClick = {}
-        )
+        Surface {
+            SecondaryButton(
+                text = "Secondary Button",
+                onClick = {}
+            )
+        }
+
 
     }
 
